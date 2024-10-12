@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSearch</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <form id="searchForm" action="https://www.google.com/search" method="GET">
+        <img src="loupe.png" class="imgloupe" alt="DeepSearchLogo" width="200px auto"><br>
+        <h1 class="h1">DeepSearch</h1><br>
+        <button class="reset-button" id="resetButton">
+            <img src="reset.png" alt="Reset">
+        </button>
+        <br>
+        <!-- Sélecteur pour le type de fichier -->
+        <select id="searchType" name="searchType">
+            <option value="">Specify filetype</option>
+            <option value="pdf">PDF</option>
+            <option value="png OR filetype:webp OR filetype:jpg OR filetype:jpeg OR filetype:svg">Image</option>
+            <option value="xls">XLS</option>
+        </select>
+        <br>
+        
+        <!-- Champ de recherche -->
+        <input type="text" id="searchQuery" name="q" placeholder="Search..." required>
+        <br>
+        
+        <!-- Bouton de soumission -->
+        <input type="submit" value="DeepSearch">
+    </form>
+    
+    <script>
+        // Récupérer les éléments du DOM
+        const searchForm = document.getElementById('searchForm');
+        const searchTypeSelect = document.getElementById('searchType');
+        const searchQueryInput = document.getElementById('searchQuery');
+    
+        // Lors de la soumission du formulaire
+        searchForm.addEventListener('submit', function(event) {
+            // Récupérer la valeur du sélecteur
+            const searchType = searchTypeSelect.value;
+            const searchQuery = searchQueryInput.value.trim();
+    
+            // Si un type est sélectionné (comme pdf, image, xls)
+            if (searchType !== "") {
+                searchQueryInput.value = `filetype:${searchType} "${searchQuery}"`;
+            } else {
+                // Sinon, juste entourer la recherche par des guillemets
+                searchQueryInput.value = `"${searchQuery}"`;
+            }
+        });
+        // Reset champs
+        resetButton.addEventListener('click', function() {
+            searchQueryInput.value = ''; // Vider le champ de recherche
+            searchTypeSelect.selectedIndex = 0; // Réinitialiser le sélecteur
+        });
+    </script>      
+</div>
+</body>
+</html>
