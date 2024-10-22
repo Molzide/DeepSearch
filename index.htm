@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeepSearch</title>
     <link href="style.css" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
 </head>
 <body>
 <div class="container">
@@ -33,29 +34,24 @@
     </form>
     
     <script>
-        // Récupérer les éléments du DOM
         const searchForm = document.getElementById('searchForm');
         const searchTypeSelect = document.getElementById('searchType');
         const searchQueryInput = document.getElementById('searchQuery');
     
-        // Lors de la soumission du formulaire
         searchForm.addEventListener('submit', function(event) {
-            // Récupérer la valeur du sélecteur
             const searchType = searchTypeSelect.value;
             const searchQuery = searchQueryInput.value.trim();
-    
-            // Si un type est sélectionné (comme pdf, image, xls)
+            
             if (searchType !== "") {
                 searchQueryInput.value = `filetype:${searchType} "${searchQuery}"`;
             } else {
-                // Sinon, juste entourer la recherche par des guillemets
                 searchQueryInput.value = `"${searchQuery}"`;
             }
         });
         // Reset champs
         resetButton.addEventListener('click', function() {
-            searchQueryInput.value = ''; // Vider le champ de recherche
-            searchTypeSelect.selectedIndex = 0; // Réinitialiser le sélecteur
+            searchQueryInput.value = '';
+            searchTypeSelect.selectedIndex = 0; // Reset
         });
     </script>      
 </div>

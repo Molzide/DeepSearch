@@ -6,6 +6,23 @@ body {
     text-align: center;
     background-color: rgb(23, 2, 6);
 }
+
+@media only screen and (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+        text-align: center;
+        background-color: rgb(23, 2, 6);
+    }
+    select {
+        font-family: "OCR A", "Courier New", monospace !important;
+    }
+    input[type="text"] {
+        font-family: "OCR A", "Courier New", monospace !important;
+    }
+}
 .container {
     width: 90%;
     border: 5px solid rgb(44, 5, 13);
