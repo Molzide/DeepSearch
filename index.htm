@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeepSearch</title>
     <link href="style.css" rel="stylesheet"/>
-    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <link rel="icon" type="image/x-icon" href="loupe.svg">
 </head>
 <body>
 <div class="container">
     <form id="searchForm" action="https://www.google.com/search" method="GET">
-        <img src="loupe.png" class="imgloupe" alt="DeepSearchLogo" width="200px auto"><br>
+        <img src="loupe.svg" id="imgloupe" alt="DeepSearchLogo" width="200px auto"><br>
         <h1 class="h1">DeepSearch</h1><br>
         <button class="reset-button" id="resetButton">
             <img src="reset.png" alt="Reset">
@@ -25,11 +25,11 @@
         </select>
         <br>
         
-        <!-- Champ de recherche -->
+        <!-- Champ de search -->
         <input type="text" id="searchQuery" name="q" placeholder="Search..." required>
         <br>
         
-        <!-- Bouton de soumission -->
+        <!-- Bouton de submit -->
         <input type="submit" value="DeepSearch">
     </form>
     
@@ -53,7 +53,7 @@
             searchQueryInput.value = '';
             searchTypeSelect.selectedIndex = 0; // Reset
         });
-    </script>      
+    </script>
 </div>
 </body>
 </html>

@@ -28,7 +28,7 @@ body {
     border: 5px solid rgb(44, 5, 13);
     border-radius: 100px;
     box-shadow: 20px 20px 50px rgb(88, 9, 25);
-    background-image: url(background.webp);
+    background: radial-gradient(circle, rgba(184,33,62,1) 0%, rgba(83,5,20,1) 50%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -36,10 +36,11 @@ body {
     margin: 0;
 }
 
-.imgloupe {
+#imgloupe {
     border: 0px solid crimson;
-    box-shadow: 4px 4px 5px rgb(143, 12, 38);
+    filter: drop-shadow(0 0 50px rgb(143, 12, 38));
 }
+
 
 .h1 {
     text-shadow: 4px 4px 2px rgb(143, 12, 38);
